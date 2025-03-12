@@ -105,6 +105,18 @@ Before running the application, you need to configure the OAuth2 client and obta
         });
     ```
 
+## Event Schema Validation
+
+The project includes an `eventSchema.json` file that defines the JSON schema for validating calendar event data. This schema ensures that all event objects passed to the `createEvent` function contain the required fields with proper formats:
+
+-   Required fields: `calType`, `date`, `timeZone`, and `participants`
+-   Time format validation (HH:MM)
+-   Date format validation (YYYY-MM-DD)
+-   Email format validation for participants
+-   Enumerated values for `calType` and `rptFrq`
+
+You can use this schema with a JSON schema validator library to validate event data before passing it to the `createEvent` function.
+
 ## API Reference
 
 ### `createEvent`
