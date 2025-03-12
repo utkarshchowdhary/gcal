@@ -1,4 +1,4 @@
-# Google Calendar API
+# GCal - Google Calendar Integration Library
 
 ## Description
 
