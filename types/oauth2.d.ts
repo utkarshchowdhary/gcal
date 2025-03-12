@@ -1,6 +1,7 @@
 export type TClientData = {
     client_id: string;
     client_secret: string;
+    redirect_url: string;
     scope: string;
 };
 

@@ -9,8 +9,6 @@ const logger = winston.createLogger({
     transports: [new winston.transports.Console()],
 });
 
-const redirectURL = "https://developers.google.com/oauthplayground";
-
 const getErrorDetails = (
     error: unknown
 ): { message: string; stack?: string } => {
@@ -62,6 +60,7 @@ export const createEvent: TCreateEvent = async (
     const {
         client_id: clientId,
         client_secret: clientSecret,
+        redirect_url: redirectURL,
         scope,
     } = clientData;
     const {

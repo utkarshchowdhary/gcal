@@ -10,7 +10,6 @@ This project provides an API for interacting with the Google Calendar, specifica
 -   Supports all-day events and events with specific timeframes.
 -   Handles recurring events with daily, weekly, monthly, quarterly, or yearly frequencies.
 -   Refreshes OAuth2 tokens automatically and saves them.
--   Logs events and errors using Winston for monitoring and debugging.
 
 ## Prerequisites
 
@@ -22,7 +21,7 @@ This project provides an API for interacting with the Google Calendar, specifica
 1.  Clone the repository:
 
     ```bash
-    git clone <repository-url>
+    git clone https://github.com/utkarshchowdhary/gcal.git
     ```
 
 2.  Navigate to the project directory:
@@ -56,14 +55,6 @@ Before running the application, you need to configure the OAuth2 client and obta
     -   Set up the OAuth 2.0 Client ID and Secret.
     -   Configure the redirect URI (e.g., `https://developers.google.com/oauthplayground`).
 
-2.  **Environment Variables:**
-
-    Set the following environment variables:
-
-    -   `CLIENT_ID`: The OAuth2 client ID.
-    -   `CLIENT_SECRET`: The OAuth2 client secret.
-    -   `REDIRECT_URL`: The redirect URI.
-
 ## Usage
 
 1.  **Import the `createEvent` function:**
@@ -95,7 +86,8 @@ Before running the application, you need to configure the OAuth2 client and obta
     const clientData = {
         client_id: "YOUR_CLIENT_ID",
         client_secret: "YOUR_CLIENT_SECRET",
-        scope: "https://www.googleapis.com/auth/calendar",
+        redirect_url: "https://developers.google.com/oauthplayground",
+        scope: "https://www.googleapis.com/auth/calendar.events",
     };
 
     const tokenData = {
